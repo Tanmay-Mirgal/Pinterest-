@@ -6,8 +6,18 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const authRouter = require('./routes/auth');
+const pinsRouter = require('./routes/pins');
+
+app.use('/auth', authRouter);
+app.use('/pins', pinsRouter);
+app.use('/', (req, res) => res.redirect('/pins'));
+
 
 var app = express();
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://127.0.0.1:27017/pinterest-clone', { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
