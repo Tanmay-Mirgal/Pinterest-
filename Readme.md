@@ -1,0 +1,1 @@
+This is a Pinterest clone app using EJS,Nodejs,Express,MongoDB,Mongoose,tailwind CSS and deployed on Netlify and Vercel.
